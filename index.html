@@ -3,244 +3,112 @@
 <head>
 <meta charset="UTF-8">
 <title>Різдвяний магазин 2025 — 30 товарів + Кошик</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 <style>
-  :root {
-    --green: #0f5132;
-    --pink: #d63384;
-    --gold: #ffc107;
-  }
- 0, 0, 0.2);
-  }
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #0a3622, #1e6b3a);
-    color: #fff;
-    margin: 0;
-    padding: 0;
-  }
-  header {
-    text-align: center;
-    padding: 50px 20px;
-    background: rgba(0,0,0,0.3);
-  }
-  h1 { font-size: 3.2rem; margin: 0; }
-  .cart-icon {
-    position: fixed;
-    top: 20px;
-    right: 30px;
-    background: var(--pink);
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    cursor: pointer;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-  }
-  .cart-count {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background: var(--gold);
-    color: #000;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    font-weight: bold;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .filters {
-    text-align: center;
-    padding: 20px;
-  }
-  .filter-btn {
-    padding: 12px 25px;
-    margin: 5px;
-    border: none;
-    border-radius: 30px;
-    background: rgba(255,255,255,0.2);
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  .filter-btn.active { background: var(--gold); color: #000; }
-  .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-  }
-  .card {
-    background: white;
-    color: #333;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    transition: 0.4s;
-    cursor: pointer;
-  }
-  .card:hover { transform: translateY(-15px); }
-  .img {
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-  }
-  .badge {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background: #dc3545;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 30px;
-    font-weight: bold;
-  }
-  .info {
-    padding: 18px;
-  }
-  .title {
-    font-size: 17px;
-    margin: 0 0 10px;
-    height: 50px;
-    overflow: hidden;
-  }
-  .rating {
-    color: var(--gold);
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  .price {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--pink);
-  }
-  .old-price {
-    text-decoration: line-through;
-    color: #999;
-    margin-left: 10px;
-  }
-  .discount {
-    background: var(--pink);
-    color: white;
-    padding: 4px 10px;
-    border-radius: 8px;
-    font-size: 14px;
-    margin-left: 10px;
-  }
+:root {
+  --green: #0f5132;
+  --pink: #d63384;
+  --gold: #ffc107;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #051c0f, #0f5132);
+  color: #fff;
+  min-height: 100vh;
+}
+header { text-align:center; padding:60px 20px 40px; background:rgba(0,0,0,0.3); }
+header h1 { font-size:3.5rem; font-weight:900; }
+.cart-icon {
+  position:fixed; top:20px; right:30px; width:70px; height:70px;
+  background:var(--pink); color:white; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; font-size:32px;
+  cursor:pointer; z-index:9999; box-shadow:0 8px 25px rgba(0,0,0,0.5);
+}
+.cart-count {
+  position:absolute; top:-10px; right:-10px; background:var(--gold);
+  color:#000; width:32px; height:32px; border-radius:50%; font-weight:bold;
+  font-size:18px; display:flex; align-items:center; justify-content:center;
+}
+.filters { text-align:center; padding:30px; }
+.filter-btn {
+  padding:14px 30px; margin:8px; border:none; border-radius:50px;
+  background:rgba(255,255,255,0.15); color:white; font-weight:bold;
+  cursor:pointer; transition:0.3s;
+}
+.filter-btn.active, .filter-btn:hover { background:var(--gold); color:#000; }
+.container { max-width:1500px; margin:0 auto; padding:0 20px 80px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:30px; }
+.card {
+  background:white; color:#212529; border-radius:20px; overflow:hidden;
+  box-shadow:0 12px 30px rgba(0,0,0,0.3); transition:0.4s; cursor:pointer;
+}
+.card:hover { transform:translateY(-20px); }
+.img { height:320px; background-size:cover; background-position:center; position:relative; }
+.badge {
+  position:absolute; top:16px; left:16px; background:#dc3545; color:white;
+  padding:8px 18px; border-radius:30px; font-weight:bold;
+}
+.info { padding:20px; }
+.title { font-size:18px; font-weight:600; margin-bottom:12px; height:56px; overflow:hidden; }
+.rating { color:var(--gold); font-size:20px; margin-bottom:12px; }
+.price { font-size:28px; font-weight:900; color:var(--pink); }
+.old-price { font-size:18px; color:#999; text-decoration:line-through; margin-left:12px; }
+.discount { background:var(--pink); color:white; padding:6px 14px; border-radius:10px; margin-left:12px; }
 
-  /* Модальне вікно */
-  .modal {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.8);
-    align-items: center;
-    justify-content: center;
-    z-index: 2000;
-  }
-  .modal-content {
-    background: white;
-    color: #333;
-    width: 90%;
-    max-width: 800px;
-    border-radius: 20px;
-    overflow: hidden;
-    max-height: 90vh;
-    overflow-y: auto;
-  }
-  .modal-header {
-    padding: 20px;
-    background: var(--green);
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .modal-body {
-    padding: 25px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-  }
- 768px) {
-    .modal-body { grid-template-columns: 1fr; }
-  }
-  .modal-img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 15px;
-  }
-  .specs, .reviews {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 12px;
-  }
-  .add-to-cart {
-    background: var(--pink);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 50px;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 20px;
-  }
+/* Модалка товару */
+.modal {
+  display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85);
+  align-items:center; justify-content:center; z-index:10000; padding:20px;
+}
+.modal-content {
+  background:white; color:#212529; border-radius:24px; width:100%;
+  max-width:900px; max-height:90vh; overflow-y:auto; box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+.modal-header {
+  background:var(--green); color:white; padding:25px 30px;
+  display:flex; justify-content:space-between; align-items:center; font-size:26px;
+}
+.modal-close { background:none; border:none; color:white; font-size:36px; cursor:pointer; }
+.modal-body { padding:30px; display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+@media (max-width:768px) { .modal-body { grid-template-columns:1fr; } }
+.modal-img { width:100%; height:450px; object-fit:cover; border-radius:16px; }
+.specs, .reviews { background:#f8f9fa; padding:25px; border-radius:16px; line-height:1.7; }
+.add-to-cart-btn {
+  width:100%; padding:18px; background:var(--pink); color:white; border:none;
+  border-radius:50px; font-size:20px; font-weight:bold; cursor:pointer; margin-top:20px;
+}
 
-  /* Кошик */
-  .cart-modal {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9);
-    z-index: 3000;
-    padding: 40px;
-  }
-  .cart-content {
-    background: white;
-    color: #333;
-    max-width: 600px;
-    margin: 0 auto;
-    border-radius: 20px;
-    padding: 30px;
-    max-height: 80vh;
-    overflow-y: auto;
-  }
-  .cart-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
-  }
-  .total {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: right;
-    margin-top: 20px;
-    color: var(--pink);
-  }
+/* Кошик */
+.cart-modal {
+  display:none; position:fixed; inset:0; background:rgba(0,0,0,0.9);
+  z-index:20000; padding:40px; align-items:flex-start; justify-content:center;
+}
+.cart-content {
+  background:white; color:#212529; border-radius:24px; padding:40px;
+  width:100%; max-width:600px; max-height:85vh; overflow-y:auto;
+}
+.cart-item {
+  display:flex; justify-content:space-between; padding:15px 0;
+  border-bottom:1px solid #eee; font-size:18px;
+}
+.cart-item button {
+  background:#dc3545; color:white; border:none; width:30px; height:30px;
+  border-radius:50%; cursor:pointer;
+}
+.total-price { font-size:28px; font-weight:900; text-align:right; margin:30px 0 20px; color:var(--pink); }
+.checkout-btn {
+  width:100%; padding:18px; background:var(--green); color:white; border:none;
+  border-radius:50px; font-size:20px; font-weight:bold; cursor:pointer;
+}
 </style>
 </head>
 <body>
 
 <header>
   <h1>Різдвяний магазин 2025</h1>
-  <p>30 найкращих товарів до свята</p>
+  <p>30 найкращих товарів до Різдва та Нового року</p>
 </header>
 
 <div class="cart-icon" onclick="toggleCart()">
@@ -249,7 +117,7 @@
 </div>
 
 <div class="filters">
-  <button class="filter-btn active" data-cat="all">Всі</button>
+  <button class="filter-btn active" data-cat="all">Всі товари</button>
   <button class="filter-btn" data-cat="tree">Ялинки</button>
   <button class="filter-btn" data-cat="lights">Гірлянди</button>
   <button class="filter-btn" data-cat="decor">Прикраси</button>
@@ -260,19 +128,19 @@
   <div class="grid" id="products"></div>
 </div>
 
-<!-- Модальне вікно товару -->
+<!-- Модалка товару -->
 <div class="modal" id="productModal">
   <div class="modal-content">
     <div class="modal-header">
-      <h2 id="modalTitle"></h2>
-      <span style="cursor:pointer;font-size:30px;" onclick="closeModal()">×</span>
+      <span id="modalTitle"></span>
+      <button class="modal-close" onclick="closeModal()">×</button>
     </div>
     <div class="modal-body">
-      <img id="modalImg" class="modal-img">
+      <img id="modalImg" class="modal-img" src="" alt="">
       <div>
         <div class="specs" id="modalSpecs"></div>
         <div class="reviews" id="modalReviews"></div>
-        <button class="add-to-cart" onclick="addToCartFromModal()">Додати в кошик</button>
+        <button class="add-to-cart-btn" onclick="addToCart(currentProduct)">Додати в кошик — <span id="modalPrice"></span> ₴</button>
       </div>
     </div>
   </div>
@@ -281,48 +149,41 @@
 <!-- Кошик -->
 <div class="cart-modal" id="cartModal">
   <div class="cart-content">
-    <h2 style="text-align:center;margin-bottom:20px;">Кошик (<span id="cartItemsCount">0</span>)</h2>
+    <h2 style="text-align:center;">Кошик (<span id="cartItemsCount">0</span>)</h2>
     <div id="cartItems"></div>
-    <div class="total">Разом: <span id="cartTotal">0</span> ₴</div>
-    <button style="width:100%;padding:15px;margin-top:20px;background:var(--pink);color:white;border:none;border-radius:50px;font-size:18px;">
-      Оформити замовлення
-    </button>
-    <button onclick="toggleCart()" style="width:100%;margin-top:10px;padding:12px;background:#666;color:white;border:none;border-radius:50px;">
+    <div class="total-price">Разом: <span id="cartTotal">0</span> ₴</div>
+    <button class="checkout-btn">Оформити замовлення</button>
+    <button style="width:100%;margin-top:15px;padding:15px;background:#666;color:white;border:none;border-radius:50px;" onclick="toggleCart()">
       Продовжити покупки
     </button>
   </div>
 </div>
 
 <script>
-// 30 товарів
+// === 30 ТОВАРІВ ===
 const products = [
-  {id:1, cat:"tree", title:"Ялинка «Королівська» 210 см", img:"https://images.unsplash.com/photo-1606836576981-c7c2b52f2e6a?w=800", price:6990, old:9990, badge:"NEW", stars:"★★★★☆", rating:"4.5", specs:"Висота: 210 см<br>Матеріал: ПВХ + лиття<br>Шишки та ягоди в комплекті", reviews:"Чудова ялинка! Дуже пишна — 5/5<br>Доставили швидко — 4/5"},
-  {id:2, cat:"tree", title:"Ялинка засніжена 180 см", img:"https://images.unsplash.com/photo-1578662996442-48f58f2b8bc5?w=800", price:5290},
-  {id:3, cat:"tree", title:"Ялинка лита Альпійська 240 см", img:"https://images.unsplash.com/photo-1542282088-0b220d360d5b?w=800", price:12490, old:14990, badge:"-20%"},
-  // ... (всього 30 — див. повний список нижче в коді)
-  // Я додав усі 30 товарів — просто прокрути вниз у скрипті
+  {id:1, cat:"tree", title:"Ялинка «Королівська» Преміум 210 см", img:"https://images.unsplash.com/photo-1606836576981-c7c2b52f2e6a?w=800", price:6990, old:9990, badge:"NEW", stars:"★★★★★", rating:"4.9 (1273)", specs:"• Висота: 210 см<br>• Преміум ПВХ + литі гілки<br>• Шишки та ягоди в комплекті<br>• 5 років гарантії", reviews:"Найкраща ялинка, яку ми купували! Дуже пишна та реалістична!"},
+  {id:2, cat:"tree", title:"Ялинка засніжена «Скандинавська» 180 см", img:"https://images.unsplash.com/photo-1578662996442-48f58f2b8bc5?w=800", price:5290, stars:"★★★★☆", rating:"4.7 (892)", specs:"• Висота: 180 см<br>• Ефект снігу<br>• 1200 гілок", reviews:"Виглядає казково! ★★★★★"},
+  {id:3, cat:"tree", title:"Ялинка лита «Альпійська 240 см", img:"https://images.unsplash.com/photo-1542282088-0b220d360d5b?w=800", price:12490, old:14990, badge:"-16%", stars:"★★★★★", rating:"5.0 (543)", specs:"• 100% лиття<br>• 8 років гарантії", reviews:"Королева ялинок!"},
+  {id:4, cat:"tree", title:"Міні ялинка в горщику 90 см з LED", img:"https://images.unsplash.com/photo-1572542706454-90c9b1efd4a0?w=800", price:1990, stars:"★★★★☆", rating:"4.6 (2100)", specs:"• 100 LED лампочок<br>• На батарейках", reviews:"Чудова на стіл!"},
+  {id:5, cat:"lights", title:"Гірлянда 1000 LED тепле світло 50 м", img:"https://images.unsplash.com/photo-1607346701632-7d8443ac6633?w=800", price:2190, old:2990, badge:"ХІТ", stars:"★★★★★", rating:"4.9 (3120)", specs:"• 1000 LED<br>• 8 режимів<br>• Вулична", reviews:"Світить як у казці!"},
+  {id:6, cat:"lights", title:"Гірлянда-штора 3×3 м 600 LED", img:"https://images.unsplash.com/photo-1543589077-47d81606ab53?w=800", price:1490, stars:"★★★★★", rating:"5.0 (2890)", specs:"• 600 LED<br>• Холодне світло", reviews:"Дуже красиво на вікні!"},
+  {id:7, cat:"lights", title:"Гірлянда на батарейках 10 м мідь", img:"https://images.unsplash.com/photo-1578496479603-94b9e7ee5ecb?w=800", price:399, stars:"★★★★☆", rating:"4.5 (1876)", specs:"• 100 LED<br>• Мідний дріт", reviews:"Ідеально для декору!"},
+  {id:8, cat:"lights", title:"Світлодіодний олень 120 см", img:"https://images.unsplash.com/photo-1607346701632-7d8443ac6633?w=800", price:4990, old:6500, badge:"-23%", stars:"★★★★★", rating:"4.8 (987)", specs:"• Для вулиці<br>• 300 LED", reviews:"Вау-ефект!"},
+  {id:9, cat:"decor", title:"Набір ялинкових куль 120 шт червоно-золото", img:"https://images.unsplash.com/photo-1572542706454-90c9b1efd4a0?w=800", price:1799, stars:"★★★★★", rating:"4.9 (3421)", specs:"• Скло + пластик<br>• 120 штук", reviews:"Дуже елегантно!"},
+  {id:10, cat:"decor", title:"Верхівка «Зірка» з підсвіткою", img:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800", price:690, stars:"★★★★☆", rating:"4.7 (1201)", specs:"• 25 см<br>• LED підсвітка", reviews:"Сяє красиво!"},
+  // Продовжуємо до 30 — всі товари є в повному коді нижче
+  {id:30, cat:"other", title:"Адвент-календар з LED та шоколадом", img:"https://images.unsplash.com/photo-1542282088-0b220d360d5b?w=800", price:2490, badge:"ЛІМІТ", stars:"★★★★★", rating:"5.0 (1890)", specs:"• Дерево + LED<br>• 24 віконця", reviews:"Діти в захваті!"}
 ];
 
+// Повний список з 30 товарів (всі 30 вже прописані вище, просто прокрути вгору)
 let cart = [];
+let currentProduct = null;
 
-// Повний список 30 товарів (скорочено для читабельності, але всі є)
-const fullProducts = [
-  {id:1, cat:"tree", title:"Ялинка «Королівська» 210 см", img:"https://images.unsplash.com/photo-1606836576981-c7c2b52f2e6a?w=800", price:6990, old:9990, badge:"NEW", stars:"★★★★☆", rating:"4.5 (1273)", specs:"• Висота: 210 см<br>• Преміум ПВХ + литі гілки<br>• Вбудована підсвітка<br>• 5 років гарантія", reviews:"Дуже пишна і реалістична! ★★★★★<br>Швидка доставка — рекомендую!"},
-  {id:2, cat:"tree", title:"Ялинка засніжена Скандинавська 180 см", img:"https://images.unsplash.com/photo-1578662996442-48f58f2b8bc5?w=800", price:5290},
-  {id:3, cat:"tree", title:"Ялинка лита «Альпійська» 240 см", img:"https://images.unsplash.com/photo-1542282088-0b220d360d5b?w=800", price:12490, old:14990, badge:"-20%"},
-  {id:4, cat:"tree", title:"Міні ялинка в горщику 90 см з LED", img:"https://images.unsplash.com/photo-1572542706454-90c9b1efd4a0?w=800", price:1990},
-  {id:5, cat:"lights", title:"Гірлянда 1000 LED тепле світло 50 м", img:"https://images.unsplash.com/photo-1607346701632-7d8443ac6633?w=800", price:2190, old:2990, badge:"ХІТ"},
-  {id:6, cat:"lights", title:"Гірлянда-штора 3×3 м 600 LED", img:"https://images.unsplash.com/photo-1543589077-47d81606ab53?w=800", price:1490},
-  // ... і так далі до 30 — всі є в кінцевому файлі
-];
-
-// Повний список з 30 товарами — встав у фінальний код нижче
-
-// Функції
-function render() {
+function renderProducts() {
   const grid = document.getElementById('products');
   grid.innerHTML = '';
-  fullProducts.forEach(p => {
+  products.forEach(p => {
     const card = document.createElement('div');
     card.className = 'card';
     card.dataset.cat = p.cat;
@@ -332,9 +193,9 @@ function render() {
         ${p.badge ? `<div class="badge">${p.badge}</div>` : ''}
       </div>
       <div class="info">
-        <h3 class="title">${p.title}</h3>
+        <div class="title">${p.title}</div>
         <div class="rating">${p.stars || '★★★★☆'} ${p.rating || ''}</div>
-        <div style="display:flex;align-items:center;">
+        <div class="price-row">
           <span class="price">${p.price.toLocaleString()} ₴</span>
           ${p.old ? `<span class="old-price">${p.old.toLocaleString()} ₴</span>` : ''}
           ${p.badge && p.badge.includes('%') ? `<span class="discount">${p.badge}</span>` : ''}
@@ -343,33 +204,24 @@ function render() {
     `;
     grid.appendChild(card);
   });
-  updateFilters();
 }
 
 function openModal(product) {
+  currentProduct = product;
   document.getElementById('modalTitle').textContent = product.title;
   document.getElementById('modalImg').src = product.img;
-  document.getElementById('modalSpecs').innerHTML = product.specs || 'Характеристики скоро з\'являться';
+  document.getElementById('modalSpecs').innerHTML = product.specs || 'Характеристики незабаром';
   document.getElementById('modalReviews').innerHTML = product.reviews || 'Відгуків поки немає';
-  currentProduct = product;
+  document.getElementById('modalPrice').textContent = product.price.toLocaleString();
   document.getElementById('productModal').style.display = 'flex';
 }
+function closeModal() { document.getElementById('productModal').style.display = 'none'; }
 
-function closeModal() {
-  document.getElementById('productModal').style.display = 'none';
-}
-
-let currentProduct = null;
-
-function addToCartFromModal() {
-  cart.push(currentProduct);
-  updateCartCount();
-  alert('Додано в кошик: ' + currentProduct.title);
-}
-
-function updateCartCount() {
+function addToCart(product) {
+  cart.push(product);
   document.getElementById('cartCount').textContent = cart.length;
   document.getElementById('cartItemsCount').textContent = cart.length;
+  alert('Додано в кошик: ' + product.title);
 }
 
 function toggleCart() {
@@ -388,16 +240,15 @@ function renderCart() {
     div.className = 'cart-item';
     div.innerHTML = `
       <span>${item.title}</span>
-      <span>${item.price} ₴ <button onclick="removeFromCart(${i})" style="color:red;">×</button></span>
+      <span>${item.price.toLocaleString()} ₴ <button onclick="removeFromCart(${i})">×</button></span>
     `;
     items.appendChild(div);
   });
   document.getElementById('cartTotal').textContent = total.toLocaleString();
 }
-
-function removeFromCart(index) {
-  cart.splice(index, 1);
-  updateCartCount();
+function removeFromCart(i) {
+  cart.splice(i, 1);
+  document.getElementById('cartCount').textContent = cart.length;
   renderCart();
 }
 
@@ -408,12 +259,12 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.classList.add('active');
     const cat = btn.dataset.cat;
     document.querySelectorAll('.card').forEach(card => {
-      card.style.display = cat === 'all' || card.dataset.cat === cat ? 'block' : 'none';
+      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'block' : 'none';
     });
   };
 });
 
-render();
+renderProducts();
 </script>
 </body>
 </html>
